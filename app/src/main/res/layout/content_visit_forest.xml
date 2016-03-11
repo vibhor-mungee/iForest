@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGreenBackground"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ioraecological.ifp.VisitForestActivity"
+    tools:showIn="@layout/activity_visit_forest">
+
+    <Button
+        android:id="@+id/search_nearby_forest"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="167dp"
+        android:background="#71cf3d"
+        android:elevation="4dp"
+        android:paddingBottom="-5dp"
+        android:paddingLeft="90dp"
+        android:paddingRight="90dp"
+        android:paddingTop="-5dp"
+        android:text="Search Nearby"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/locate_on_map"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/search_nearby_forest"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="#71cf3d"
+        android:elevation="4dp"
+        android:paddingBottom="-5dp"
+        android:paddingLeft="90dp"
+        android:paddingRight="90dp"
+        android:paddingTop="-5dp"
+        android:text="Locate on Map"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/forest_events"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/locate_on_map"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="#71cf3d"
+        android:elevation="4dp"
+        android:paddingBottom="-5dp"
+        android:paddingLeft="90dp"
+        android:paddingRight="90dp"
+        android:paddingTop="-5dp"
+        android:text="Forest Events"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

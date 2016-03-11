@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGreenBackground"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ioraecological.ifp.SearchNearbyForest"
+    tools:showIn="@layout/activity_search_nearby_forest">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:autoText="false"
+        android:background="@color/colorGreenSecondTitle"
+        android:gravity="center_vertical|center_horizontal"
+        android:padding="10dp"
+        android:text="Search nearby"
+        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorGreenSecondTitle"
+        android:elevation="4dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:padding="10dp"
+        android:text="Distance from nearest forest(km)"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <SeekBar
+            android:id="@+id/distance_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="4"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/distance_slider"
+            android:thumbTintMode="multiply" />
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="1 km"
+            android:textColor="@color/colorGreenText" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

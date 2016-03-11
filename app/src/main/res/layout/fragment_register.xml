@@ -1,0 +1,172 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.ioraecological.ifp.RegisterActivityFragment"
+    tools:showIn="@layout/activity_register">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:text="Profile Picture"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorGreenText"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:ems="10"
+        android:hint="First Name"
+        android:textColorHint="#ffffff" />
+
+    <EditText
+        android:id="@+id/last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/first_name"
+        android:layout_below="@+id/first_name"
+        android:ems="10"
+        android:hint="Last Name"
+        android:inputType="textPersonName"
+        android:textColorHint="#ffffff" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/last_name"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#ffffff" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="#ffffff" />
+
+    <EditText
+        android:id="@+id/contactNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Mobile Number"
+        android:inputType="phone"
+        android:textColorHint="#ffffff" />
+
+
+    <TextView
+        android:id="@+id/dob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contactNumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Date of Birth"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorGreenText"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/first_name"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="10dp"
+        android:layout_toStartOf="@+id/first_name"
+        android:src="@drawable/user" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/last_name"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="10dp"
+        android:layout_toStartOf="@+id/last_name"
+        android:src="@drawable/user" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/email"
+        android:layout_toStartOf="@+id/last_name"
+        android:adjustViewBounds="false"
+        android:src="@drawable/email" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/password"
+        android:layout_toStartOf="@+id/password"
+        android:adjustViewBounds="false"
+        android:src="@drawable/password_icon" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/contactNumber"
+        android:layout_marginBottom="7dp"
+        android:layout_marginRight="5dp"
+        android:layout_toStartOf="@+id/contactNumber"
+        android:adjustViewBounds="false"
+        android:src="@drawable/mobile_icon" />
+
+    <EditText
+        android:id="@+id/dateOfBirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dob"
+        android:layout_toEndOf="@+id/imageView7"
+        android:ems="10"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/dateOfBirth"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorGreenButton"
+        android:paddingBottom="-5dp"
+        android:paddingTop="-5dp"
+        android:text="Register"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

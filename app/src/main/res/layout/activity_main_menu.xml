@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_bg"
+    android:padding="2dp"
+    tools:context="com.ioraecological.ifp.MainMenu">
+
+    <LinearLayout
+        android:id="@+id/learn_menu_item"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/learn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="Learn"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/visit_menu_item"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_below="@+id/learn_menu_item"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/visits_small" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="Visit"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/act_menu_item"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_below="@+id/visit_menu_item"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/act_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="Act"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/play_menu_item"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_below="@+id/act_menu_item"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/play_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="Play"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/meet_menu_item"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_below="@+id/play_menu_item"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/meet_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="Meet"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/contribute_menu_item"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_below="@+id/meet_menu_item"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/contribute" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="Contribute"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
