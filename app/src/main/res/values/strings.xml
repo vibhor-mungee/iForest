@@ -24,4 +24,6 @@
     <string name="title_activity_search_nearby_forest">SearchNearbyForest</string>
     <string name="title_activity_event">EventActivity</string>
     <string name="title_activity_plan">PlanActivity</string>
+    <string name="title_activity_join">Join Event</string>
+    <string name="title_activity_invite_friend">Invite Friends</string>
 </resources>

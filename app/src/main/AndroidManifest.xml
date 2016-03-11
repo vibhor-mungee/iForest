@@ -90,6 +90,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ioraecological.ifp.EventActivity" />
         </activity>
+        <activity
+            android:name=".JoinActivity"
+            android:label="@string/title_activity_join"
+            android:parentActivityName=".EventActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.EventActivity" />
+        </activity>
+        <activity
+            android:name=".InviteFriendActivity"
+            android:label="@string/title_activity_invite_friend"
+            android:parentActivityName=".EventActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.EventActivity" />
+        </activity>
     </application>
 
 </manifest>

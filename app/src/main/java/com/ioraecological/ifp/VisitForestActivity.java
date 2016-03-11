@@ -29,6 +29,7 @@ public class VisitForestActivity extends AppCompatActivity implements View.OnCli
 
         forestEvents = (Button) findViewById(R.id.forest_events);
         forestEvents.setOnClickListener(this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 
@@ -42,6 +43,8 @@ public class VisitForestActivity extends AppCompatActivity implements View.OnCli
             case R.id.locate_on_map:
                 break;
             case R.id.forest_events:
+                Intent i3 = new Intent(VisitForestActivity.this, EventActivity.class);
+                startActivity(i3);
                 break;
         }
 
