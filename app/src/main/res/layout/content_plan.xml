@@ -157,5 +157,49 @@
         android:layout_toRightOf="@+id/location_select"
         android:src="@drawable/navigate_icon" />
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/horizontalLine2"
+        android:layout_below="@+id/horizontalLine2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:text="Describe"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/to_date_picker"
+        android:layout_alignStart="@+id/textView8"
+        android:layout_below="@+id/textView8"
+        android:layout_marginTop="10dp"
+        android:autoText="false"
+        android:background="@drawable/rounded_box"
+        android:ems="5"
+        android:inputType="textMultiLine"
+        android:lines="5" />
+
+    <Button
+        android:id="@+id/create_event_btn"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorGreenButton"
+        android:paddingBottom="-5dp"
+        android:paddingTop="-5dp"
+        android:text="Create"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
 
 </RelativeLayout>

@@ -103,7 +103,7 @@ public class FindForestActivity extends FragmentActivity implements OnMapReadyCa
 
     private void setUpMapIfNeeded() {
         if (mMap == null) {
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+            // mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
         }
         //startKMLLoad();
         return;

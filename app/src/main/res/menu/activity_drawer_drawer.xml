@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/my_events"
+            android:icon="@drawable/myevents_small_menu"
+            android:title="My Events" />
+        <item
+            android:id="@+id/my_visits"
+            android:icon="@drawable/myvisits_small_menu"
+            android:title="My Visits" />
+        <item
+            android:id="@+id/learn"
+            android:icon="@drawable/learn_small"
+            android:title="Learn" />
+        <item
+            android:id="@+id/visit"
+            android:icon="@drawable/visits_small"
+            android:title="Visit" />
+        <item
+            android:id="@+id/act"
+            android:icon="@drawable/act_small"
+            android:title="Act" />
+        <item
+            android:id="@+id/play"
+            android:icon="@drawable/play_small"
+            android:title="Play" />
+        <item
+            android:id="@+id/meet"
+            android:icon="@drawable/meet_small"
+            android:title="Meet" />
+        <item
+            android:id="@+id/upload"
+            android:icon="@drawable/contribute_small"
+            android:title="Visit" />
+        <item
+            android:id="@+id/about_iforest"
+            android:title="About IForest" />
+    </group>
+
+</menu>

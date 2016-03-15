@@ -27,6 +27,8 @@ public class LearnActivity extends AppCompatActivity implements AdapterView.OnIt
         stateSpinner.setAdapter(stateAdapter);
         stateSpinner.setOnItemSelectedListener(this);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
 

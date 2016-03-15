@@ -18,10 +18,9 @@ public class Splash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                SessionManager sm = new SessionManager();
-                String status = sm.getPreferences(Splash.this, "status");
+                SessionManager sm = new SessionManager(getBaseContext());
                 Intent i;
-                if (status.equals("0")) {
+                if (sm.isUserLogin()) {
                     i = new Intent(Splash.this, MainMenu.class);
                 } else {
                     i = new Intent(Splash.this, SignInActivity.class);

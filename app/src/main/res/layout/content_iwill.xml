@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pledgebackground"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ioraecological.ifp.IWillActivity"
+    tools:showIn="@layout/activity_iwill">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:autoText="false"
+        android:background="@color/colorGreenSecondTitle"
+        android:gravity="center_vertical|center_horizontal"
+        android:padding="10dp"
+        android:text="Pledge"
+        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="I/We Pledge to:"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorGreenText"
+            android:textStyle="bold|italic" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:enabled="true"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="9dp"
+                android:textStyle="italic" />
+
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkBox"
+                android:enabled="true"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="9dp"
+                android:textStyle="italic" />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkBox1"
+                android:enabled="true"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="9dp"
+                android:textStyle="italic" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkBox2"
+                android:enabled="true"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="9dp"
+                android:textStyle="italic" />
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkBox3"
+                android:enabled="true"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="9dp"
+                android:textStyle="italic" />
+
+            <CheckBox
+                android:id="@+id/checkBox5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkBox4"
+                android:enabled="true"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="9dp"
+                android:textStyle="italic" />
+
+            <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkBox5"
+                android:enabled="true"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="9dp"
+                android:textStyle="italic" />
+
+            <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkBox6"
+                android:enabled="true"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="9dp"
+                android:textStyle="italic" />
+
+            <CheckBox
+                android:id="@+id/checkBox8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkBox7"
+                android:enabled="true"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="9dp"
+                android:textStyle="italic" />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/checkBox"
+                android:layout_toRightOf="@id/checkBox"
+                android:text="Print only when absolutely essential"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/checkBox1"
+                android:layout_toRightOf="@id/checkBox1"
+                android:text="Replace paper towels and napkins with cloth towels"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/checkBox2"
+                android:layout_toRightOf="@id/checkBox2"
+                android:text="Carry cloth bag to grocery store"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/checkBox3"
+                android:layout_toRightOf="@id/checkBox3"
+                android:text="Reuse and share things"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/checkBox4"
+                android:layout_toRightOf="@id/checkBox4"
+                android:text="Use only sustainably produced palm oil products"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/checkBox5"
+                android:layout_toRightOf="@id/checkBox5"
+                android:text="Unplug electric gadgets when not in use."
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/checkBox6"
+                android:layout_toRightOf="@id/checkBox6"
+                android:text="Change light bulbs to CFL or LED"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/checkBox7"
+                android:layout_toRightOf="@id/checkBox7"
+                android:text="Switch lights off when not in use"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/checkBox8"
+                android:layout_toRightOf="@id/checkBox8"
+                android:text="Buy only FSC certified wood and paper products where available"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenText"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/submit_pledge"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_below="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorGreenSecondTitle"
+                android:text="Submit" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

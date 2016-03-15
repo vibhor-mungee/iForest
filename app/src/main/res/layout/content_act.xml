@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pledgebackground"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ioraecological.ifp.ActActivity"
+    tools:showIn="@layout/activity_act">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:autoText="false"
+        android:background="@color/colorGreenSecondTitle"
+        android:gravity="center_vertical|center_horizontal"
+        android:padding="10dp"
+        android:text="Pledge"
+        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="INDIVIDUAL"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="false"
+        android:layout_below="@+id/textView13"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:src="@drawable/indivdual_icon" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView15"
+        android:layout_centerHorizontal="true"
+        android:text="For Forests"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/i_will_btn"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/textView15"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:background="@color/colorGreenSecondTitle"
+        android:text="I will"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/i_will_btn"
+        android:layout_centerHorizontal="true"
+        android:text="ORGANIZATION"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="false"
+        android:layout_below="@+id/textView14"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:src="@drawable/oraganization_icon" />
+
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView16"
+        android:layout_centerHorizontal="true"
+        android:text="For Forests"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/we_will_btn"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/textView16"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:background="@color/colorGreenSecondTitle"
+        android:text="We will"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

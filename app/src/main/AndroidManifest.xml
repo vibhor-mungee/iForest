@@ -63,15 +63,27 @@
         </activity>
         <activity
             android:name=".LearnActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.MainMenu" />
+        </activity>
         <activity
             android:name=".VisitForestActivity"
             android:label="@string/title_activity_visit_forest"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.MainMenu" />
+        </activity>
         <activity
             android:name=".SearchNearbyForest"
             android:label="@string/title_activity_search_nearby_forest"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.VisitForestActivity" />
+        </activity>
         <activity
             android:name=".EventActivity"
             android:label="@string/title_activity_event"
@@ -107,6 +119,73 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ioraecological.ifp.EventActivity" />
+        </activity>
+        <activity
+            android:name=".PlayActivity"
+            android:label="@string/title_activity_play"
+            android:parentActivityName=".MainMenu"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.MainMenu" />
+        </activity>
+        <activity
+            android:name=".QuizPage"
+            android:label="@string/title_activity_quiz_page"
+            android:parentActivityName=".PlayActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.PlayActivity" />
+        </activity>
+        <activity
+            android:name=".CorrectAnswerActivity"
+            android:label="@string/title_activity_correct_answer"
+            android:parentActivityName=".QuizPage"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.QuizPage" />
+        </activity>
+        <activity
+            android:name=".WrongAnswerActivity"
+            android:label="@string/title_activity_wrong_answer"
+            android:parentActivityName=".QuizPage"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.QuizPage" />
+        </activity>
+        <activity
+            android:name=".DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ActActivity"
+            android:label="@string/title_activity_act"
+            android:parentActivityName=".MainMenu"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.MainMenu" />
+        </activity>
+        <activity
+            android:name=".QuizTakenActivity"
+            android:label="@string/title_activity_quiz_taken"
+            android:parentActivityName=".MainMenu"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.MainMenu" />
+        </activity>
+        <activity
+            android:name=".IWillActivity"
+            android:label="@string/title_activity_iwill"
+            android:parentActivityName=".ActActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.ActActivity" />
         </activity>
     </application>
 

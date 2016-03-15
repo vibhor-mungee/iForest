@@ -48,14 +48,16 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private void validate(View view) {
         String username = username_et.getText().toString();
         String password = password_et.getText().toString();
-        sm = new SessionManager();
+        sm = new SessionManager(getBaseContext());
 
         if (username.trim().equalsIgnoreCase("")) {
             username_et.setError("Please enter Username");
         } else if (password.trim().equalsIgnoreCase("")) {
             password_et.setError("Please enter Password");
         } else if (username.trim().equalsIgnoreCase("admin") && password.trim().equalsIgnoreCase("admin")) {
-            sm.setPreferences(SignInActivity.this, "status", "1");
+            sm.setSavedUserName(username);
+            sm.setSavedPassword(password);
+            sm.setUserLoggedIn(true);
             Intent i = new Intent(SignInActivity.this, MainMenu.class);
             startActivity(i);
         } else {

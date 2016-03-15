@@ -7,8 +7,13 @@
     <color name="colorGreenButton">#0DB14B</color>
     <color name="colorGreenTitle">#00B35A</color>
     <color name="colorGreenSecondTitle">#71cf3d</color>
+    <color name="colorSelectedAnswer">#aa71cf3d</color>
     <color name="grey">#999999</color>
     <color name="colorGreenBackground">#00AF70</color>
     <color name="dividerGreen">#009157</color>
+    <color name="quizbackground">#00bb4f</color>
+    <color name="snackbargreenbackgorund">#006E39</color>
+    <color name="questiongreen">#008630</color>
+    <color name="pledgebackground">#00AE53</color>
 
 </resources>

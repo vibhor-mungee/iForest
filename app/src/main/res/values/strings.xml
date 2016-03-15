@@ -13,12 +13,12 @@
     <string name="title_activity_learn">LearnActivity</string>
 
     <string-array name="state_list">
-        <item>Gujrat</item>
-        <item>Madhya Pradesh</item>
         <item>Delhi</item>
-        <item>Sikkim</item>
+        <item>Gujrat</item>
         <item>Himachal Pradesh</item>
         <item>Karnataka</item>
+        <item>Madhya Pradesh</item>
+        <item>Sikkim</item>
     </string-array>
     <string name="title_activity_visit_forest">VisitForestActivity</string>
     <string name="title_activity_search_nearby_forest">SearchNearbyForest</string>
@@ -26,4 +26,41 @@
     <string name="title_activity_plan">PlanActivity</string>
     <string name="title_activity_join">Join Event</string>
     <string name="title_activity_invite_friend">Invite Friends</string>
+    <string name="title_activity_play">PlayActivity</string>
+    <string name="title_activity_quiz_page">QuizPage</string>
+    <string name="title_activity_correct_answer">CorrectAnswerActivity</string>
+    <string name="title_activity_wrong_answer">WrongAnswerActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="menu_items">
+        <item>My Events</item>
+        <item>My Visits</item>
+        <item>Learn</item>
+        <item>Visit</item>
+        <item>Act</item>
+        <item>Play</item>
+        <item>Meet</item>
+        <item>Upload</item>
+        <item>About IForest</item>
+    </string-array>
+    <string-array name="items_icons">
+        <item>@drawable/myevents_small_menu</item>
+        <item>@drawable/myvisits_small_menu</item>
+        <item>@drawable/learn_small</item>
+        <item>@drawable/visits_small</item>
+        <item>@drawable/act_small</item>
+        <item>@drawable/play_small</item>
+        <item>@drawable/meet_small</item>
+        <item>@drawable/upload_content</item>
+    </string-array>
+    <string name="title_activity_drawer">DrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_act">ActActivity</string>
+    <string name="title_activity_quiz_taken">QuizTakenActivity</string>
+    <string name="title_activity_iwill">IWillActivity</string>
+
 </resources>

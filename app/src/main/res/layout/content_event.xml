@@ -37,8 +37,8 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/create_event" />
 
         <TextView
@@ -65,8 +65,8 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/invite_icon" />
 
         <TextView
@@ -93,8 +93,8 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/join_icon" />
 
         <TextView
@@ -121,8 +121,8 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/myevents" />
 
         <TextView
@@ -143,13 +143,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:src="@drawable/foresteer_icon" />
 
         <TextView

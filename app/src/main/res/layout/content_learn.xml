@@ -5,10 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorGreenBackground"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.ioraecological.ifp.LearnActivity"
     tools:showIn="@layout/activity_learn">
@@ -20,7 +16,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="20dp" />
+
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="com.ioraecological.ifp.IndiaMapFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/state_spinner"
+        android:layout_marginBottom="30dp"
+        tools:layout="@layout/fragment_india_map" />
 
 
 </RelativeLayout>

@@ -40,6 +40,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View view) {
+        SessionManager sm = new SessionManager(getBaseContext());
         switch (view.getId()) {
             case R.id.learn_menu_item:
                 Intent i = new Intent(MainMenu.this, LearnActivity.class);
@@ -50,8 +51,17 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
                 startActivity(i2);
                 break;
             case R.id.act_menu_item:
+                Intent i3 = new Intent(MainMenu.this, ActActivity.class);
+                startActivity(i3);
                 break;
             case R.id.play_menu_item:
+                if (sm.isQuizTaken()) {
+                    Intent i4 = new Intent(MainMenu.this, QuizTakenActivity.class);
+                    startActivity(i4);
+                } else {
+                    Intent i4 = new Intent(MainMenu.this, PlayActivity.class);
+                    startActivity(i4);
+                }
                 break;
             case R.id.meet_menu_item:
                 break;
