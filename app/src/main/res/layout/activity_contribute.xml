@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    tools:context="com.ioraecological.ifp.ContributeActivity">
 
-    tools:context="com.ioraecological.ifp.CorrectAnswerActivity">
 
+
+    <include layout="@layout/content_contribute" />
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -25,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Play"
+                android:text="Contribute"
                 android:textColor="#ffffff"
                 android:textSize="25dp"
                 android:textStyle="bold" />
@@ -34,7 +36,5 @@
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_correct_answer" />
 
 </android.support.design.widget.CoordinatorLayout>

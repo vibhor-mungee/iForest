@@ -62,5 +62,8 @@
     <string name="title_activity_act">ActActivity</string>
     <string name="title_activity_quiz_taken">QuizTakenActivity</string>
     <string name="title_activity_iwill">IWillActivity</string>
+    <string name="title_activity_meet">MeetActivity</string>
+    <string name="title_activity_meet_location">MeetLocationActivity</string>
+    <string name="title_activity_contribute">ContributeActivity</string>
 
 </resources>

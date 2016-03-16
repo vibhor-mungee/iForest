@@ -64,8 +64,12 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
                 }
                 break;
             case R.id.meet_menu_item:
+                Intent i5 = new Intent(MainMenu.this, MeetActivity.class);
+                startActivity(i5);
                 break;
             case R.id.contribute_menu_item:
+                Intent i6 = new Intent(MainMenu.this, ContributeActivity.class);
+                startActivity(i6);
                 break;
         }
     }

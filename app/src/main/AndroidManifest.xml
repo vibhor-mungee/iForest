@@ -187,6 +187,26 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ioraecological.ifp.ActActivity" />
         </activity>
+        <activity
+            android:name=".MeetActivity"
+            android:label="@string/title_activity_meet"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MeetLocationActivity"
+            android:label="@string/title_activity_meet_location"
+            android:theme="@style/AppTheme" />
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".ContributeActivity"
+            android:label="@string/title_activity_contribute"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
