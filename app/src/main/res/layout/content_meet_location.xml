@@ -70,17 +70,30 @@
         android:layout_marginTop="155dp"
         android:textAlignment="center"/>
 
+
     <TextView
         android:id="@+id/from_date_picker"
         android:layout_width="180dp"
         android:layout_height="33dp"
         android:background="@drawable/rounded_border"
-        android:drawableRight="@drawable/drop_down_icon"
+
         android:padding="5dp"
         android:layout_marginTop="160dp"
         android:layout_marginLeft="140dp"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
+    <Spinner
+        android:id="@+id/community_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="162dp"
+        android:layout_marginLeft="142dp"
+        android:layout_marginRight="50dp"
+        android:prompt="@string/community_prompt"
+
+
+        />
     <View
         android:id="@+id/horizontalLine3"
         android:layout_width="fill_parent"

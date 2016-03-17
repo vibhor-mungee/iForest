@@ -20,6 +20,15 @@
         <item>Madhya Pradesh</item>
         <item>Sikkim</item>
     </string-array>
+    <string name="community_prompt">Select Community</string>
+    <string-array name="community_list">
+        <item>NGOs</item>
+        <item>Youth Groups</item>
+        <item>Nature Clubs</item>
+        <item>Photographers</item>
+        <item>Adventure Groups</item>
+        <item>Environmentalists</item>
+    </string-array>
     <string name="title_activity_visit_forest">VisitForestActivity</string>
     <string name="title_activity_search_nearby_forest">SearchNearbyForest</string>
     <string name="title_activity_event">EventActivity</string>
@@ -65,5 +74,9 @@
     <string name="title_activity_meet">MeetActivity</string>
     <string name="title_activity_meet_location">MeetLocationActivity</string>
     <string name="title_activity_contribute">ContributeActivity</string>
+    <string name="title_activity_contribute_content">ContributeContentActivity</string>
+    <string name="title_activity_camera_roll">CameraRollActivity</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_learn__gujrat_">Learn_Gujrat_Activity</string>
 
 </resources>

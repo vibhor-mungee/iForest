@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ioraecological.ifp.ProfileActivity"
+    android:background="@color/turquoise"
+    tools:showIn="@layout/activity_profile">
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/indivdual_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/profileImage"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileImage"
+        android:text="Personal Info"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="18dp"
+        android:textColor="#ffffff"
+        android:id="@+id/profileInfo"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileInfo"
+        android:hint="User Name"
+        android:textColor="#ffffff"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:textColorHint="#ffffff"
+        android:textSize="18dp"
+        android:id="@+id/userNameText"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/quoteText"
+        android:layout_below="@+id/userNameText"
+        android:text="Quote"
+        android:layout_marginTop="7dp"
+        android:textSize="18dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#ffffff"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quoteText"
+        android:lines="3"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#ffffff"
+        android:layout_marginTop="6dp"
+        android:id="@+id/textViewQuote"
+        android:gravity="start"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/professionTextView"
+        android:layout_below="@+id/textViewQuote"
+        android:text="Professional Info"
+        android:layout_marginTop="12dp"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <View
+        android:id="@+id/horizontalLine2"
+        android:layout_width="fill_parent"
+        android:layout_height="1.5dp"
+        android:layout_below="@+id/professionTextView"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="7dp"
+        android:background="#ffffff" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:hint="Email ID"
+        android:textColorHint="#ffffff"
+        android:layout_below="@+id/horizontalLine2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="6dp"
+        android:id="@+id/emailTextView"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mobile No"
+        android:textColorHint="#ffffff"
+        android:layout_below="@id/emailTextView"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="6dp"
+        android:textColor="#ffffff"
+        android:id="@+id/mobileText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobileText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Save"
+        android:background="@drawable/rounded_button_avacaado"
+        android:textColor="#ffffff"
+        android:id="@+id/saveButton"/>
+
+</RelativeLayout>

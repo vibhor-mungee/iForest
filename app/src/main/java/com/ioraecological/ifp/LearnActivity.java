@@ -1,5 +1,7 @@
 package com.ioraecological.ifp;
 
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -27,6 +29,10 @@ public class LearnActivity extends AppCompatActivity implements AdapterView.OnIt
         stateSpinner.setAdapter(stateAdapter);
         stateSpinner.setOnItemSelectedListener(this);
 
+        IndiaMapFragment imf = new IndiaMapFragment();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.add(R.id.map_fragment, imf);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
@@ -35,6 +41,30 @@ public class LearnActivity extends AppCompatActivity implements AdapterView.OnIt
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+        String state = adapterView.getItemAtPosition(i).toString();
+        switch (state) {
+            case "Delhi":
+
+            case "Gujrat":
+
+                break;
+            case "Himachal Pradesh":
+
+                break;
+            case "Karnataka":
+
+                break;
+            case "Madhya Pradesh":
+
+                break;
+            case "Sikkim":
+                Intent sikkimIntent = new Intent(LearnActivity.this,Learn_Gujrat_Activity.class );
+                startActivity(sikkimIntent);
+                break;
+
+            default:
+                throw new IllegalArgumentException("No map found for: " + state);
+        }
     }
 
     @Override

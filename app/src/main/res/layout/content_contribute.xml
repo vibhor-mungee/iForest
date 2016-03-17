@@ -12,7 +12,7 @@
     <ImageView
         android:layout_width="125dp"
         android:layout_height="125dp"
-        android:id="@+id/imageView17"
+        android:id="@+id/pictureImageView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp"
@@ -24,7 +24,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Upload Picture"
         android:id="@+id/textView24"
-        android:layout_below="@+id/imageView17"
+        android:layout_below="@+id/pictureImageView"
         android:layout_centerHorizontal="true"
         android:textColor="#ffffff"
         android:layout_marginTop="5dp"/>
@@ -32,7 +32,7 @@
     <ImageView
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:id="@+id/imageView18"
+        android:id="@+id/contentImageView"
         android:layout_below="@+id/textView24"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
@@ -44,7 +44,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Upload Content"
         android:id="@+id/textView25"
-        android:layout_below="@+id/imageView18"
+        android:layout_below="@+id/contentImageView"
         android:layout_centerHorizontal="true"
         android:textColor="#ffffff"
         android:layout_marginTop="5dp"/>

@@ -190,11 +190,19 @@
         <activity
             android:name=".MeetActivity"
             android:label="@string/title_activity_meet"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.MainMenu" />
+        </activity>
         <activity
             android:name=".MeetLocationActivity"
             android:label="@string/title_activity_meet_location"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.MeetActivity" />
+        </activity>
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -206,7 +214,42 @@
         <activity
             android:name=".ContributeActivity"
             android:label="@string/title_activity_contribute"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.MainMenu" />
+        </activity>
+        <activity
+            android:name=".ContributeContentActivity"
+            android:label="@string/title_activity_contribute_content"
+            android:parentActivityName=".ContributeActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.ContributeActivity" />
+        </activity>
+        <activity
+            android:name=".CameraRollActivity"
+            android:label="@string/title_activity_camera_roll"
+            android:parentActivityName=".ContributeActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.ContributeActivity" />
+        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Learn_Gujrat_Activity"
+            android:label="@string/title_activity_learn__gujrat_"
+            android:parentActivityName=".LearnActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ioraecological.ifp.LearnActivity" />
+        </activity>
     </application>
 
 </manifest>
