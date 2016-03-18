@@ -1,84 +1,301 @@
 package com.ioraecological.ifp;
-
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.Toast;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Environment;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.provider.MediaStore;
+import android.support.design.widget.FloatingActionButton;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-public class CameraRollActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class CameraRollActivity extends Activity {
+
+    AsyncTaskLoadFiles myAsyncTaskLoadFiles;
     private Uri fileUri;
     private static final int MEDIA_TYPE_IMAGE = 1;
     private static final String IMAGE_DIRECTORY_NAME = "ifp";
     Bitmap nBitmap;
     String nPath;
 
+    public class AsyncTaskLoadFiles extends AsyncTask<Void, String, Void> {
+
+        File targetDirector;
+        ImageAdapter myTaskAdapter;
+
+        public AsyncTaskLoadFiles(ImageAdapter adapter) {
+            myTaskAdapter = adapter;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            String ExternalStorageDirectoryPath = Environment
+                    .getExternalStorageDirectory().getAbsolutePath();
+
+            String targetPath = ExternalStorageDirectoryPath + "/ifp/";
+            targetDirector = new File(targetPath);
+            myTaskAdapter.clear();
+
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+            File[] files = targetDirector.listFiles();
+            Arrays.sort(files);
+            for (File file : files) {
+                publishProgress(file.getAbsolutePath());
+                if (isCancelled()) break;
+            }
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(String... values) {
+            myTaskAdapter.add(values[0]);
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            myTaskAdapter.notifyDataSetChanged();
+            super.onPostExecute(result);
+        }
+
+    }
+
+    public class ImageAdapter extends BaseAdapter {
+
+        private Context mContext;
+        ArrayList<String> itemList = new ArrayList<String>();
+
+        public ImageAdapter(Context c) {
+            mContext = c;
+        }
+
+        void add(String path) {
+            itemList.add(path);
+        }
+
+        void clear() {
+            itemList.clear();
+        }
+
+        void remove(int index) {
+            itemList.remove(index);
+        }
+
+        @Override
+        public int getCount() {
+            return itemList.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            // TODO Auto-generated method stub
+            return itemList.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+
+        //getView load bitmap in AsyncTask
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            ViewHolder holder;
+
+            ImageView imageView;
+            if (convertView == null) { // if it's not recycled, initialize some
+                // attributes
+                imageView = new ImageView(mContext);
+                imageView.setLayoutParams(new GridView.LayoutParams(220, 220));
+                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                imageView.setPadding(8, 8, 8, 8);
+
+                convertView = imageView;
+
+                holder = new ViewHolder();
+                holder.image = imageView;
+                holder.position = position;
+                convertView.setTag(holder);
+            } else {
+                //imageView = (ImageView) convertView;
+                holder = (ViewHolder) convertView.getTag();
+                ((ImageView) convertView).setImageBitmap(null);
+            }
+
+            //Bitmap bm = decodeSampledBitmapFromUri(itemList.get(position), 220, 220);
+            // Using an AsyncTask to load the slow images in a background thread
+            new AsyncTask<ViewHolder, Void, Bitmap>() {
+                private ViewHolder v;
+
+                @Override
+                protected Bitmap doInBackground(ViewHolder... params) {
+                    v = params[0];
+                    Bitmap bm = decodeSampledBitmapFromUri(itemList.get(position), 220, 220);
+                    return bm;
+                }
+
+                @Override
+                protected void onPostExecute(Bitmap result) {
+                    super.onPostExecute(result);
+                    v.image.setImageBitmap(result);
+
+                }
+            }.execute(holder);
+
+            //imageView.setImageBitmap(bm);
+            //return imageView;
+            return convertView;
+        }
+
+        public Bitmap decodeSampledBitmapFromUri(String path, int reqWidth,
+                                                 int reqHeight) {
+
+            Bitmap bm = null;
+            // First decode with inJustDecodeBounds=true to check dimensions
+            final BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = true;
+            BitmapFactory.decodeFile(path, options);
+
+            // Calculate inSampleSize
+            options.inSampleSize = calculateInSampleSize(options, reqWidth,
+                    reqHeight);
+
+            // Decode bitmap with inSampleSize set
+            options.inJustDecodeBounds = false;
+            bm = BitmapFactory.decodeFile(path, options);
+
+            return bm;
+        }
+
+        public int calculateInSampleSize(
+
+                BitmapFactory.Options options, int reqWidth, int reqHeight) {
+            // Raw height and width of image
+            final int height = options.outHeight;
+            final int width = options.outWidth;
+            int inSampleSize = 1;
+
+            if (height > reqHeight || width > reqWidth) {
+                if (width > height) {
+                    inSampleSize = Math.round((float) height
+                            / (float) reqHeight);
+                } else {
+                    inSampleSize = Math.round((float) width / (float) reqWidth);
+                }
+            }
+
+            return inSampleSize;
+        }
+
+        class ViewHolder {
+            ImageView image;
+            int position;
+        }
+
+    }
+
+    ImageAdapter myImageAdapter;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_roll);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("");
-        setSupportActionBar(toolbar);
 
-        GridView gridView = (GridView) findViewById(R.id.grid_view);
+        final GridView gridview = (GridView) findViewById(R.id.grid_view);
+        myImageAdapter = new ImageAdapter(this);
+        gridview.setAdapter(myImageAdapter);
 
-        // Instance of ImageAdapter Class
-        gridView.setAdapter(new ImageAdapter(this));
+        gridview.setOnItemClickListener(myOnItemClickListener);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        FloatingActionButton buttonReload = (FloatingActionButton) findViewById(R.id.camera_fab);
+        buttonReload.setOnClickListener(new OnClickListener() {
 
-        gridView.setOnItemClickListener(this);
+            @Override
+            public void onClick(View arg0) {
+
+
+                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
+                i.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+                startActivityForResult(i,1);
+                //Cancel the previous running task, if exist.
+                myAsyncTaskLoadFiles.cancel(true);
+
+                //new another ImageAdapter, to prevent the adapter have
+                //mixed files
+                myImageAdapter = new ImageAdapter(CameraRollActivity.this);
+                gridview.setAdapter(myImageAdapter);
+                myAsyncTaskLoadFiles = new AsyncTaskLoadFiles(myImageAdapter);
+                myAsyncTaskLoadFiles.execute();
+            }
+        });
+
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    OnItemClickListener myOnItemClickListener = new OnItemClickListener() {
 
-        Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
-        i.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-        startActivityForResult(i, 1);
-    }
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position,
+                                long id) {
+            //String prompt = "remove " + (String) parent.getItemAtPosition(position);
+            //Toast.makeText(getApplicationContext(), prompt, Toast.LENGTH_SHORT)
+                    //.show();
 
-    /*
-     * Creating file uri to store image
-     */
-    public Uri getOutputMediaFileUri(int type) {
-        return Uri.fromFile(getOutputMediaFile(type));
-    }
+            //myImageAdapter.remove(position);
+            //myImageAdapter.notifyDataSetChanged();
+            //Intent i = new Intent(getApplicationContext(), SingleImageActivity.class);
+
+            // Pass image index
+            //i.putExtra("id", position);
+            //startActivity(i);
+
+        }
+    };
 
     /*
      * returning image
      */
-    private static File getOutputMediaFile(int type) {
-        String root = Environment.getExternalStorageDirectory().toString();
-        File mediaStorageDir = new File(root + "/ifp");
+    private File getOutputMediaFile(int type) {
 
-        // Create the storage directory if it does not exist
+        File mediaStorageDir = new File(Environment.getExternalStorageDirectory() + "/ifp");
+        boolean success = true;
         if (!mediaStorageDir.exists()) {
-            if (!mediaStorageDir.mkdirs()) {
-                Log.d(IMAGE_DIRECTORY_NAME, "Oops! Failed create "
-                        + IMAGE_DIRECTORY_NAME + " directory");
-                return null;
-            }
+            success = mediaStorageDir.mkdir();
+            Log.v("mkdir", String.valueOf(success));
         }
+        if (!success) {
+            // Do something on success
+            //Toast.makeText(CameraRollActivity.this, "abx",Toast.LENGTH_SHORT).show();
+            Log.d(IMAGE_DIRECTORY_NAME, "Oops! Failed create "
+                    + IMAGE_DIRECTORY_NAME + " directory");
+        }
+
         // Create a media file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",
                 Locale.getDefault()).format(new Date());
@@ -93,30 +310,34 @@ public class CameraRollActivity extends AppCompatActivity implements AdapterView
         return mediaFile;
     }
 
+    /*
+   * Creating file uri to store image
+   */
+    public Uri getOutputMediaFileUri(int type) {
+        return Uri.fromFile(getOutputMediaFile(type));
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // if the result is capturing Image
-        //if (requestCode == 1 || requestCode == 2 || requestCode == 3
-               // || requestCode == 4) {
-            if (resultCode == RESULT_OK) {
-                // successfully captured the image
-                // display it in image view
-                previewCapturedImage();
-            } else if (resultCode == RESULT_CANCELED) {
-                // user cancelled Image capture
-                Toast.makeText(CameraRollActivity.this,
-                        "User cancelled image capture", Toast.LENGTH_LONG)
-                        .show();
 
-            } else {
-                // failed to capture image
-                Toast.makeText(CameraRollActivity.this,
-                        "Sorry! Failed to capture image", Toast.LENGTH_LONG)
-                        .show();
+        if (resultCode == RESULT_OK) {
+            // successfully captured the image
+            // display it in image view
+            previewCapturedImage();
+        } else if (resultCode == RESULT_CANCELED) {
+            // user cancelled Image capture
+            Toast.makeText(CameraRollActivity.this,
+                    "User cancelled image capture", Toast.LENGTH_LONG)
+                    .show();
 
-            }
+        } else {
+            // failed to capture image
+            Toast.makeText(CameraRollActivity.this,
+                    "Sorry! Failed to capture image", Toast.LENGTH_LONG)
+                    .show();
+
         }
+    }
     //}
 
     /*
@@ -126,27 +347,11 @@ public class CameraRollActivity extends AppCompatActivity implements AdapterView
         try {
             BitmapFactory.Options options = new BitmapFactory.Options();
             // downsizing image as it throws OutOfMemory Exception for larger
-            // images
             options.inSampleSize = 8;
             final Bitmap bitmap = BitmapFactory.decodeFile(fileUri.getPath(),
                     options);
             nBitmap = bitmap;
             nPath = fileUri.getPath().toString();
-            //if (code == 1) {
-                //nBitmap = bitmap;
-                //nPath = fileUri.getPath().toString();
-            //} //else if (code == 2) {
-//                sBitmap = bitmap;
-//                sPath = fileUri.getPath().toString();
-//            } else if (code == 3) {
-//                eBitmap = bitmap;
-//                ePath = fileUri.getPath().toString();
-//            } else if (code == 4) {
-//                wBitmap = bitmap;
-//                wPath = fileUri.getPath().toString();
-//            }
-
-            // mBitmap = bitmap;
             ByteArrayOutputStream bao = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bao);
         } catch (NullPointerException e) {
@@ -156,4 +361,10 @@ public class CameraRollActivity extends AppCompatActivity implements AdapterView
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        myAsyncTaskLoadFiles = new AsyncTaskLoadFiles(myImageAdapter);
+        myAsyncTaskLoadFiles.execute();
+    }
 }

@@ -78,5 +78,7 @@
     <string name="title_activity_camera_roll">CameraRollActivity</string>
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_learn__gujrat_">Learn_Gujrat_Activity</string>
+    <string name="title_activity_test_activty">TestActivty</string>
+    <string name="title_activity_single_image">SingleImageActivity</string>
 
 </resources>
